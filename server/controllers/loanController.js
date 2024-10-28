@@ -35,6 +35,16 @@ export async function getUserLoans(req, res) {
     }
 }
 
+// Get all loans to display for admin
+export async function getAllLoans(req, res) {
+    try {
+        const loans = await Loan.find();
+        res.status(200).json(loans);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
+
 // Make repayment
 export async function addRepayment(req, res) {
     try {
