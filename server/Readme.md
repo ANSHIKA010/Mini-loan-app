@@ -124,7 +124,10 @@ This server, built with Node.js, Express, and MongoDB, provides a backend REST A
       "password": "password123"
     }
     ```
-- **Response**: `{ "message": "User registered successfully" }`
+- **Response**: 
+   ```json
+     { "message": "User registered successfully" }
+   ```
 
 #### 2. Login User
 - **Endpoint**: `POST /api/users/login`
@@ -160,8 +163,33 @@ This server, built with Node.js, Express, and MongoDB, provides a backend REST A
 - **Response**:
     ```json
     {
-      "loan": { "id": "loan_id", "amount": 10000, "term": 3, "status": "PENDING", "repayments": [...] }
-    }
+       "user": "user_id",
+       "amount": 10000,
+       "term": 3,
+       "status": "PENDING",
+       "repayments": [
+           {
+               "dueDate": "curr_date+7",
+               "amount": 3333.33,
+               "status": "PENDING",
+               "_id": "repayment_id1"
+           },
+           {
+               "dueDate": "curr_date+14",
+               "amount": 3333.33,
+               "status": "PENDING",
+               "_id": "repayment_id1"
+           },
+           {
+               "dueDate": "curr_date+21",
+               "amount": 3333.34,
+               "status": "PENDING",
+               "_id": "repayment_id1"
+           }
+       ],
+       "_id": "loan_id",
+       "__v": 0
+   }
     ```
 
 #### 2. Approve Loan (Admin Only)
