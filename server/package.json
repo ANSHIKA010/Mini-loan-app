@@ -1,0 +1,23 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "rest apis of mini-loan-app",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm run server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ANSHIKA010/Mini-loan-app.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "ANSHIKA010",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ANSHIKA010/Mini-loan-app/issues"
+  },
+  "homepage": "https://github.com/ANSHIKA010/Mini-loan-app#readme"
+}
