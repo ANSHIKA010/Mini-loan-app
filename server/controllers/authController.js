@@ -8,14 +8,13 @@ const { sign } = jsonwebtoken;
 
 // Register a new user
 export async function register(req, res) {
-    const { username, password, isAdmin } = req.body;
+    const { username, password } = req.body;
 
     try {
         const hashedPassword = await hash(password, 10);
         const user = new User({
             username,
-            password: hashedPassword,
-            isAdmin: isAdmin || false
+            password: hashedPassword
         });
 
         await user.save();
