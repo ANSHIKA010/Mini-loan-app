@@ -35,7 +35,6 @@ export async function login(req, res) {
 
         const isMatch = await compare(password, user.password);
         if (!isMatch) return res.status(400).json({ message: "Invalid credentials" });
-
         const token = sign({ id: user._id, role: user.isAdmin ? 'admin' : 'user' }, process.env.JWT_SECRET, {
             expiresIn: '1h'
         });
