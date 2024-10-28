@@ -1,9 +1,8 @@
 import bcryptjs from 'bcryptjs';
 import jsonwebtoken from 'jsonwebtoken';
 import User from '../models/User.js';
-import dotenv from 'dotenv';
 
-dotenv.config();
+
 const { hash, compare } = bcryptjs;
 const { sign } = jsonwebtoken;
 
