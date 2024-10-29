@@ -1,3 +1,7 @@
 # For server
 /server/.env
 /server/node_modules
+
+# For web-app
+/web-app/.env
+/web-app/node_modules
