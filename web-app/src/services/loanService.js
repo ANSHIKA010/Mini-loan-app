@@ -1,17 +1,17 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/loans';
+const API_URL = 'http://localhost:8000/api/loans';
 
 const authHeader = () => ({
     headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
 });
 
 export const createLoan = async (loanData) => {
-    return await axios.post(API_URL, loanData, authHeader());
+    return await axios.post(`${API_URL}/create`, loanData, authHeader());
 };
 
 export const getUserLoans = async () => {
-    return await axios.get(API_URL, authHeader());
+    return await axios.get(`${API_URL}/get`, authHeader());
 };
 
 export const getAllLoans = async () => {

@@ -9,8 +9,8 @@ const LoanList = ({ loans, onAddRepayment }) => {
                 <p>No loans available.</p>
             ) : (
                 loans.map((loan) => (
-                    <div key={loan.id} className="loan-item">
-                        <h4>Loan ID: {loan.id}</h4>
+                    <div key={loan._id} className="loan-item">
+                        <h4>Loan ID: {loan._id}</h4>
                         <p>Amount: ${loan.amount}</p>
                         <p>Term: {loan.term} weeks</p>
                         <p>Status: {loan.status}</p>
@@ -23,7 +23,7 @@ const LoanList = ({ loans, onAddRepayment }) => {
                             ))}
                         </div>
                         {loan.status !== 'PAID' && (
-                            <RepaymentForm loanId={loan.id} onAddRepayment={onAddRepayment} />
+                            <RepaymentForm loanId={loan._id} onAddRepayment={onAddRepayment} />
                         )}
                     </div>
                 ))
