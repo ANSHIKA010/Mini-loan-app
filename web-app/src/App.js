@@ -7,7 +7,6 @@ import Register from './pages/Register.js';
 import Loans from './pages/Loans.js';
 import AdminPanel from './pages/AdminPanel.js';
 import PrivateRoute from './utils/PrivateRoute';
-// import './styles.css';
 
 function App() {
     return (
