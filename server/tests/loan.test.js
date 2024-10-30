@@ -47,7 +47,7 @@ describe('Loan Operations', () => {
 
     it('should add a repayment for a loan', async () => {
         const loan = await request(app)
-            .post('/api/loans')
+            .post('/api/loans/create')
             .set('Authorization', `Bearer ${token}`)
             .send({ amount: 10000, term: 3 });
 
