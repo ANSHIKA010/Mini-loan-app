@@ -1,4 +1,4 @@
-function calculateRepayments(amount, term) {
+export default function calculateRepayments(amount, term) {
     const weeklyAmount = (amount / term).toFixed(2);
     const repayments = [];
     
@@ -9,6 +9,4 @@ function calculateRepayments(amount, term) {
     }
 
     return repayments;
-}
-
-export default calculateRepayments;
+};

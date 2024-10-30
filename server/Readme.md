@@ -261,4 +261,4 @@ This server, built with Node.js, Express, and MongoDB, provides a backend REST A
 ## Notes
 - **Overpayments**: If a user repays more than the scheduled amount, the excess amount is applied to the current repayment, but future scheduled repayments remain unchanged.
 - **Admin Privileges**: Admins can approve loans and view all loans, but cannot edit loans of other users.
-- **Token Expiration**: Tokens are set to expire in 1 hour. Users need to re-authenticate after expiration.
+- **Token Expiration**: Tokens are set to expire in 24 hours. Users need to re-authenticate after expiration.

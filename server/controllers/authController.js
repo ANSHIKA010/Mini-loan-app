@@ -8,13 +8,14 @@ const { sign } = jsonwebtoken;
 
 // Register a new user
 export async function register(req, res) {
-    const { username, password } = req.body;
+    const { username, password, isAdmin } = req.body;
 
     try {
         const hashedPassword = await hash(password, 10);
         const user = new User({
             username,
-            password: hashedPassword
+            password: hashedPassword,
+            isAdmin: isAdmin || false
         });
 
         await user.save();
@@ -35,7 +36,7 @@ export async function login(req, res) {
         const isMatch = await compare(password, user.password);
         if (!isMatch) return res.status(400).json({ message: "Invalid credentials" });
         const token = sign({ id: user._id, role: user.isAdmin ? 'admin' : 'user' }, process.env.JWT_SECRET, {
-            expiresIn: '1h'
+            expiresIn: '24h'
         });
 
         res.json({ token, user: { id: user._id, username: user.username, isAdmin: user.isAdmin } });

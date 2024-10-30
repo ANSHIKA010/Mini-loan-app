@@ -2,10 +2,17 @@
   "name": "server",
   "version": "1.0.0",
   "description": "rest apis of mini-loan-app",
-  "main": "server.js",
+  "main": "start.js",
+  "type": "module",
   "scripts": {
-    "test": "npm run server.js",
-    "start": "nodemon server.js"
+    "test": "jest --runInBand",
+    "start": "nodemon start.js"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
   },
   "repository": {
     "type": "git",
@@ -19,7 +26,7 @@
   "bugs": {
     "url": "https://github.com/ANSHIKA010/Mini-loan-app/issues"
   },
-  "homepage": "https://github.com/ANSHIKA010/Mini-loan-app#readme",
+  "homepage": "https://github.com/ANSHIKA010/Mini-loan-app/tree/main/server#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
@@ -29,8 +36,12 @@
     "mongodb": "^6.10.0",
     "mongoose": "^8.7.3"
   },
-  "type": "module",
   "devDependencies": {
+    "@babel/preset-env": "^7.26.0",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "mongodb-memory-server": "^10.1.2",
+    "supertest": "^7.0.0",
     "nodemon": "^3.1.7"
   }
 }
