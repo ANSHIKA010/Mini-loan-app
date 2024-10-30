@@ -14,14 +14,16 @@ const LoanList = ({ loans, onAddRepayment }) => {
                         <p>Amount: ${loan.amount}</p>
                         <p>Term: {loan.term} weeks</p>
                         <p>Status: {loan.status}</p>
-                        <div>
-                            <h5>Repayments:</h5>
-                            {loan.repayments.map((repayment, index) => (
-                                <p key={index}>
-                                    Due Date: {new Date(repayment.dueDate).toLocaleDateString()}, Amount: ${repayment.amount}, Status: {repayment.status}
-                                </p>
-                            ))}
-                        </div>
+                        {loan.status !== 'PENDING' && (
+                            <div>
+                                <h5>Repayments:</h5>
+                                {loan.repayments.map((repayment, index) => (
+                                    <p key={index}>
+                                        Due Date: {new Date(repayment.dueDate).toLocaleDateString()}, Amount: ${repayment.amount}, Status: {repayment.status}
+                                    </p>
+                                ))}
+                            </div>
+                        )}                        
                         {loan.status === 'APPROVED' && (
                             <RepaymentForm loanId={loan._id} onAddRepayment={onAddRepayment} />
                         )}
