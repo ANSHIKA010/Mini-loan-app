@@ -22,7 +22,7 @@ const LoanList = ({ loans, onAddRepayment }) => {
                                 </p>
                             ))}
                         </div>
-                        {loan.status !== 'PAID' && (
+                        {loan.status === 'APPROVED' && (
                             <RepaymentForm loanId={loan._id} onAddRepayment={onAddRepayment} />
                         )}
                     </div>
