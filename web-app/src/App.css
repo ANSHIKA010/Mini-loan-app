@@ -132,13 +132,14 @@ a.button:hover {
   margin: 5px 0;
 }
 
-/* Admin Panel */
-.admin-panel {
-  margin-top: 20px;
+.page {
+  padding: 40px;
 }
 
-.admin-panel h2 {
-  color: #dc3545;
+.page-header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
 }
 
 /* Responsive */

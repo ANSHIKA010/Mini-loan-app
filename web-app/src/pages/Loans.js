@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { createLoan, getUserLoans, addRepayment } from '../services/loanService';
 import LoanForm from '../components/LoanForm';
 import LoanList from '../components/LoanList';
+import { useNavigate } from 'react-router-dom';
 
 const Loans = () => {
     const [loans, setLoans] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetchLoans();
@@ -37,9 +39,17 @@ const Loans = () => {
         }
     };
 
+    const handleLogout = () => {
+        localStorage.clear(); 
+        navigate('/login'); 
+    };
+
     return (
-        <div>
-            <h2>Your Loans</h2>
+        <div className='page'>
+            <div className='page-header'>
+                <h2>Your Loans</h2>
+                <button onClick={handleLogout}>Logout</button>
+            </div>
             <LoanForm onCreateLoan={handleCreateLoan} />
             <LoanList loans={loans} onAddRepayment={handleAddRepayment} />
         </div>

@@ -11,8 +11,9 @@ const Login = () => {
         
         e.preventDefault();
         try {
-            await login({ username, password });
-            navigate('/loans');
+            const userdata = await login({ username, password });
+            if(userdata.user.isAdmin) navigate('/admin');
+            else navigate('/loans');
         } catch (error) {
             if(error.name==='AxiosError') console.error(error.response.data.message);
             else console.error(error);
@@ -20,7 +21,7 @@ const Login = () => {
     };
 
     return (
-        <div>
+        <div className='page'>
             <h2>Login</h2>
             <form onSubmit={handleLogin}>
                 <input type="text" placeholder="Username" onChange={(e) => setUsername(e.target.value)} required />

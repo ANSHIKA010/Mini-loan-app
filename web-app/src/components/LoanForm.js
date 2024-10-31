@@ -18,7 +18,8 @@ const LoanForm = ({ onCreateLoan }) => {
                 Loan Amount:
                 <input
                     type="number"
-                    min="1"
+                    min="0.01"
+                    step="0.01"
                     value={amount}
                     onChange={(e) => setAmount(e.target.value)}
                     required
@@ -28,7 +29,8 @@ const LoanForm = ({ onCreateLoan }) => {
                 Loan Term (weeks):
                 <input
                     type="number"
-                    min="1"
+                    min="0.01"
+                    step="0.01"
                     value={term}
                     onChange={(e) => setTerm(e.target.value)}
                     required

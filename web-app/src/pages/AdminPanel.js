@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { getAllLoans, approveLoan } from '../services/loanService';
+import { useNavigate } from 'react-router-dom';
 
 const AdminPanel = () => {
     const [loans, setLoans] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetchAllLoans();
@@ -26,9 +28,17 @@ const AdminPanel = () => {
         }
     };
 
+    const handleLogout = () => {
+        localStorage.clear(); 
+        navigate('/login'); 
+    };
+
     return (
-        <div>
-            <h2>Admin Panel - Manage Loans</h2>
+        <div className='page'>
+            <div className='page-header'>
+                <h2>Admin Panel - Manage Loans</h2>
+                <button onClick={handleLogout}>Logout</button>
+            </div>
             {loans.length === 0 ? (
                 <p>No loans available.</p>
             ) : (
