@@ -54,9 +54,12 @@ describe('Loan Operations', () => {
         const res = await request(app)
             .post(`/api/loans/${loan.body._id}/repayments`)
             .set('Authorization', `Bearer ${token}`)
-            .send({ amount: 3333.33 });
+            .send({ amount: 5000 });
 
         expect(res.statusCode).toEqual(200);
         expect(res.body.repayments[0]).toHaveProperty('status', 'PAID');
+        expect(res.body.repayments[0]).toHaveProperty('amount', 5000);
+        expect(res.body.repayments[1]).toHaveProperty('status', 'PENDING');
+        expect(res.body.repayments[1]).toHaveProperty('amount', 2500);
     });
 });
