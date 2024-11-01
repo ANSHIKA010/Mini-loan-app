@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "jest --runInBand",
-    "build": "",
+    "build": "npm install",
     "start": "nodemon start.js"
   },
   "jest": {
