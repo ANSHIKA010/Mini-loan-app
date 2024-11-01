@@ -28,6 +28,8 @@ This is a full-stack mini-loan application built with the MERN stack. The backen
 - **Approve Loans**: Admins can approve or reject loan requests.
 - **View All Loans**: Admins can view all loan requests in the system and monitor repayment statuses.
 
+Note: Do consider the notes at the end of the Readme before using and also check additonal notes in each section.
+
 ---
 ## Deployment
 
@@ -166,6 +168,7 @@ cd mini-loan-app
 5. The frontend should now be running at `http://localhost:3000`.
 
 Note: yarn.lock is also present if you want to use yarn for build and deploy.
+
 ---
 
 ## Testing
