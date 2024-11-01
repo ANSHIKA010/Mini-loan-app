@@ -1,7 +1,12 @@
+function formatNumberWithoutRounding(num, decimalPlaces) {
+    const factor = Math.pow(10, decimalPlaces);
+    return Math.floor(num * factor) / factor; 
+}
+
 export async function calculateRepayments(amount, term) {
     console.log("calculateRepayments called with:", { amount, term });
     
-    const weeklyAmount = (amount / term).toFixed(2);
+    const weeklyAmount = formatNumberWithoutRounding((amount / term), 2);
     console.log("Calculated weeklyAmount:", weeklyAmount);
     
     const repayments = [];
@@ -23,7 +28,7 @@ export async function calculateRepayments(amount, term) {
 export async function adjustRepayments(remainingBalance, totalInstallmentsRemained, repayments) {
     console.log("adjustRepayments called with:", { remainingBalance, totalInstallmentsRemained, repayments });
     
-    const weeklyAmount = (remainingBalance / totalInstallmentsRemained).toFixed(2);
+    const weeklyAmount = formatNumberWithoutRounding((remainingBalance / totalInstallmentsRemained), 2);
     console.log("Calculated new weeklyAmount for adjustment:", weeklyAmount);
     
     let counter = 1;
@@ -31,7 +36,7 @@ export async function adjustRepayments(remainingBalance, totalInstallmentsRemain
     repayments.forEach((repayment) => {
         if (repayment.status === 'PENDING') {
             const repaymentAmount = counter === totalInstallmentsRemained ? 
-                (remainingBalance - (weeklyAmount * (totalInstallmentsRemained - 1))) : weeklyAmount;
+            formatNumberWithoutRounding((remainingBalance - (weeklyAmount * (totalInstallmentsRemained - 1))),2) : weeklyAmount;
                 
             repayment.amount = repaymentAmount;
             console.log(`Adjusted repayment for installment ${counter}:`, { repayment });

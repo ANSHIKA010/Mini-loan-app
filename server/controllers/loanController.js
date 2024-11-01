@@ -89,9 +89,10 @@ export async function addRepayment(req, res) {
         );
         console.log("Remaining balance and pending repayments calculated:", { remainingBalance, pendingRepaymentsNum });
 
-        if (repayment && amount <= remainingBalance) {
+        if (repayment && amount <= remainingBalance && amount >= repayment.amount) {
             repayment.status = 'PAID';
             repayment.amount = amount;
+            repayment.dueDate = new Date().getDate();
             console.log("Repayment updated as paid:", repayment);
 
             loan.repayments = await adjustRepayments(remainingBalance - amount, pendingRepaymentsNum - 1, loan.repayments);
@@ -107,9 +108,12 @@ export async function addRepayment(req, res) {
         } else if (!repayment) {
             console.warn("No pending repayments for loan:", req.params.loanId);
             res.status(400).json({ message: "No pending repayments" });
-        } else {
+        } else if(amount > remainingBalance) {
             console.warn("Invalid repayment amount:", { amount, remainingBalance });
-            res.status(400).json({ message: "Invalid repayment amount" });
+            res.status(400).json({ message: "Invalid repayment amount (Amount exceeding loan)" });
+        } else {
+            console.warn("Invalid repayment amount:", { amount, repayment });
+            res.status(400).json({ message: "Invalid repayment amount (Amount less than required)" });
         }
 
     } catch (error) {
