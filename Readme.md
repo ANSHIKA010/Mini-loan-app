@@ -165,6 +165,7 @@ cd mini-loan-app
     ```
 5. The frontend should now be running at `http://localhost:3000`.
 
+Note: yarn.lock is also present if you want to use yarn for build and deploy.
 ---
 
 ## Testing
