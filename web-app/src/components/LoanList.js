@@ -25,7 +25,9 @@ const LoanList = ({ loans, onAddRepayment }) => {
                                         </p>
                                     ))
                             ) : (
-                                <p>No paid repayments available.</p>
+                                (loan.status === 'PENDING') ? (
+                                        <p>Waiting for approval from admin.</p>
+                                ):(<p>No repayments available.</p>)
                             )}
                         </div>
                         {loan.status !== 'PENDING' && (
