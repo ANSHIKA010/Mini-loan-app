@@ -5,3 +5,7 @@
 # For web-app
 /web-app/.env
 /web-app/node_modules
+
+# For Root
+.env
+node_modules
