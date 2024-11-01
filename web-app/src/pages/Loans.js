@@ -35,6 +35,7 @@ const Loans = () => {
             await addRepayment(loanId, repaymentData);
             fetchLoans();
         } catch (error) {
+            alert("Error: Make sure -> Upcoming repayment amount =< amount entered <= total remaining amount.");
             console.error("Error adding repayment:", error.response?.data || error.message);
         }
     };

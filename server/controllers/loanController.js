@@ -44,7 +44,7 @@ export async function getUserLoans(req, res) {
         const loans = await Loan.find({ user: req.user.id });
         console.log("User loans retrieved:", loans);
 
-        res.status(200).json(loans);
+        res.status(200).json(loans.reverse());
     } catch (error) {
         console.error("Error fetching user loans:", error.message);
         res.status(500).json({ error: error.message });
@@ -59,7 +59,7 @@ export async function getAllLoans(req, res) {
         const loans = await Loan.find();
         console.log("All loans retrieved:", loans);
 
-        res.status(200).json(loans);
+        res.status(200).json(loans.reverse());
     } catch (error) {
         console.error("Error fetching all loans:", error.message);
         res.status(500).json({ error: error.message });
@@ -92,7 +92,7 @@ export async function addRepayment(req, res) {
         if (repayment && amount <= remainingBalance && amount >= repayment.amount) {
             repayment.status = 'PAID';
             repayment.amount = amount;
-            repayment.dueDate = new Date().getDate();
+            repayment.dueDate = new Date();
             console.log("Repayment updated as paid:", repayment);
 
             loan.repayments = await adjustRepayments(remainingBalance - amount, pendingRepaymentsNum - 1, loan.repayments);
