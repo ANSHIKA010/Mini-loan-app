@@ -233,9 +233,9 @@ This server, built with Node.js, Express, and MongoDB, provides a backend REST A
     ```
 - **Response**:
     ```json
+    full loan object with status 200
     {
-      "message": "Repayment added",
-      "loan": { "id": "loan_id", "repayments": [...] }
+        "id": "loan_id", "repayments": [...] }
     }
     ```
 
