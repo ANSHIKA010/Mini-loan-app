@@ -31,15 +31,15 @@ const kHalfWidthSizedBox = SizedBox(
 );
 // Snippet for border radius based on device size
 final kTopBorderRadius = BorderRadius.only(
-  topLeft: Radius.circular(SizerUtil.deviceType == DeviceType.tablet ? 40 : 20),
+  topLeft: Radius.circular(Device.screenType == ScreenType.tablet ? 40 : 20),
   topRight:
-  Radius.circular(SizerUtil.deviceType == DeviceType.tablet ? 40 : 20),
+  Radius.circular(Device.screenType == ScreenType.tablet ? 40 : 20),
 );
 
 final kBottomBorderRadius = BorderRadius.only(
-  bottomRight: Radius.circular(SizerUtil.deviceType == DeviceType.tablet ? 40 : 20),
+  bottomRight: Radius.circular(Device.screenType == ScreenType.tablet ? 40 : 20),
   bottomLeft:
-  Radius.circular(SizerUtil.deviceType == DeviceType.tablet ? 40 : 20),
+  Radius.circular(Device.screenType == ScreenType.tablet? 40 : 20),
 );
 
 final kInputTextStyle = GoogleFonts.poppins(

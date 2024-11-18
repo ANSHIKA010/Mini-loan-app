@@ -1,7 +1,9 @@
 import 'package:mini_loan_flutter/utils/routes.dart';
+import 'package:mini_loan_flutter/viewModels/auth_viewmodel.dart';
 import 'package:mini_loan_flutter/views/splash_screen.dart';
 import 'package:mini_loan_flutter/utils/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 void main() {
@@ -17,7 +19,11 @@ class MyApp extends StatelessWidget {
     //context, orientation, device
     //it always requires, see plugin documentation
     return Sizer(builder: (context, orientation, device){
-      return MaterialApp(
+      return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => AuthViewModel()),
+      ],
+      child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Mini Loan',
         theme: CustomTheme().baseTheme,
@@ -26,7 +32,7 @@ class MyApp extends StatelessWidget {
         initialRoute: SplashScreen.routeName,
         //define the routes file here in order to access the routes any where all over the app
         routes: routes,
-      );
+      ),);
     });
   }
 }

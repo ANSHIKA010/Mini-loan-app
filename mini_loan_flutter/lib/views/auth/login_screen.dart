@@ -3,12 +3,14 @@ import 'package:provider/provider.dart';
 import 'package:mini_loan_flutter/viewModels/auth_viewmodel.dart';
 
 class LoginScreen extends StatelessWidget {
+
   static String routeName = 'LoginScreen';
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+
     final authViewModel = Provider.of<AuthViewModel>(context);
 
     return Scaffold(

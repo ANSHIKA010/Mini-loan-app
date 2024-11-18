@@ -9,16 +9,16 @@ class CustomTheme {
     primaryColor: kPrimaryColor,
     appBarTheme: AppBarTheme(
       //height for both phone and tablet
-      toolbarHeight: SizerUtil.deviceType == DeviceType.tablet ? 9.h : 7.h,
+      toolbarHeight: Device.screenType == ScreenType.tablet ? 9.h : 7.h,
       backgroundColor: kPrimaryColor,
       titleTextStyle: google_fonts.GoogleFonts.poppins(
-        fontSize: SizerUtil.deviceType == DeviceType.tablet ? 12.sp : 13.sp,
+        fontSize: Device.screenType == ScreenType.tablet ? 12.sp : 13.sp,
         fontWeight: FontWeight.w500,
         letterSpacing: 2.0,
       ),
       iconTheme: IconThemeData(
         color: kOtherColor,
-        size: SizerUtil.deviceType == DeviceType.tablet ? 17.sp : 18.sp,
+        size: Device.screenType == ScreenType.tablet ? 17.sp : 18.sp,
       ),
       elevation: 0,
     ),
@@ -64,7 +64,7 @@ class CustomTheme {
       headlineSmall: google_fonts.GoogleFonts.chewy(
         color: kTextWhiteColor,
         //condition if device is tablet or a phone
-        fontSize: SizerUtil.deviceType == DeviceType.tablet ? 45.sp : 40.sp,
+        fontSize: Device.screenType == ScreenType.tablet ? 45.sp : 40.sp,
       ),
     ),
   );
