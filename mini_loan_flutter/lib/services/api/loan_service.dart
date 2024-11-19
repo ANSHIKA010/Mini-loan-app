@@ -6,18 +6,14 @@ import 'package:mini_loan_flutter/utils/constants.dart';
 class LoanService {
 
   Future<List<dynamic>> fetchAllLoans(String token) async {
-    print("Start fetch");
     final response = await http.get(
       Uri.parse('$baseUrlLoans/all'),
       headers: {'Content-Type': 'application/json', 'Authorization': 'Bearer $token'},
     );
 
-    print(response.body);
-
     if (response.statusCode == 200) {
       return jsonDecode(response.body);
     } else {
-      print(response);
       throw Exception('Failed to fetch loans');
     }
   }

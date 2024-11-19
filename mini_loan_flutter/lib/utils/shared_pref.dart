@@ -30,7 +30,7 @@ class SharedPref {
     return null; // If no data found
   }
 
-  static Future<void> clearToken() async {
+  static Future<void> clearAuthData() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove('auth_token');
     await prefs.remove('user_data');

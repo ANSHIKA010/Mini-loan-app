@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mini_loan_flutter/viewModels/auth_viewmodel.dart';
+import 'package:mini_loan_flutter/views/auth/login_screen.dart';
 import 'package:mini_loan_flutter/views/loan/loan_approval_screen.dart';
 import 'package:mini_loan_flutter/views/loan/loan_list_screen.dart';
 import 'package:provider/provider.dart';
@@ -42,15 +43,14 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
         title: const Text('Admin Dashboard'),
         actions: [
           IconButton(
-            icon: const Icon(
+            icon: authViewModel.isLoading? const Icon(Icons.stop, size: 24,) :const Icon(
               Icons.logout,
               size: 24,
             ),
-            onPressed: () {
+            onPressed: () async {
               // Logout action here
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Logout button pressed')),
-              );
+              await authViewModel.logout();
+              Navigator.pushNamedAndRemoveUntil(context, LoginScreen.routeName, (route) => false);
             },
           ),
         ],

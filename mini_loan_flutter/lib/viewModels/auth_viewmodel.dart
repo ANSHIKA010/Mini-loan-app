@@ -39,4 +39,18 @@ class AuthViewModel extends ChangeNotifier {
       notifyListeners();
     }
   }
+
+  Future<void> logout() async {
+    _isLoading = true;
+    notifyListeners();
+    try{
+      await SharedPref.clearAuthData();
+    }catch(error){
+      rethrow;
+    }finally{
+      _isLoading = false;
+      notifyListeners();
+    }
+  }
+
 }
