@@ -8,7 +8,10 @@ import '../utils/constants.dart';
 class RepaymentCard extends StatelessWidget {
   final Loan loan;
 
-  const RepaymentCard({required this.loan});
+
+  final void Function(BuildContext, Loan, Repayment) onButtonPress;
+
+  const RepaymentCard({required this.loan, required this.onButtonPress});
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +77,7 @@ class RepaymentCard extends StatelessWidget {
                       return ListTile(
                         title: Text(loan.repayments[itemIndex].id, style: Theme.of(context).textTheme.titleSmall?.copyWith(color: kTextWhiteColor),),
                         subtitle: Text('Amount: \$${loan.repayments[itemIndex].amount.toString()}\nPay Date: ${DateFormat('dd/MM/yyyy').format(loan.repayments[itemIndex].dueDate)}'),
-                        tileColor: (loan.repayments[itemIndex].status == 'PAID')? Colors.greenAccent: Colors.redAccent,
+                        tileColor: (loan.repayments[itemIndex].status == 'PAID')? Colors.green: Colors.red,
                         subtitleTextStyle: Theme.of(context).textTheme.bodySmall?.copyWith(color: kTextWhiteColor),
                       );
                     },
@@ -87,8 +90,8 @@ class RepaymentCard extends StatelessWidget {
               alignment: Alignment.center,
               child: DefaultButton(
                 title: "Make Repayment",
-                onPress: () {},
-                iconData: Icons.approval,
+                onPress: () {onButtonPress(context, loan, pendingRepayment);},
+                iconData: Icons.payments,
               ),
             )
           ],
