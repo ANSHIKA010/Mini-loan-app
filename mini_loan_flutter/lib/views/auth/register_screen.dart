@@ -57,7 +57,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ],
                   ),
                   Image.asset(
-                    'assets/images/placeholder.png',
+                    'assets/images/mini_loan_app_logo.png',
                     height: 120,
                     width: 120,
                   ),

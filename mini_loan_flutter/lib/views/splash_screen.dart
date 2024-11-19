@@ -55,20 +55,20 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Column(
+            Image.asset(
+              'assets/images/mini_loan_app_logo.png',
+              height: 25.h,
+              width: 50.w,
+            ),
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text('Mini', style: Theme.of(context).textTheme.headlineSmall),
                 Text('Loan', style: Theme.of(context).textTheme.headlineSmall),
               ],
-            ),
-            Image.asset(
-              'assets/images/placeholder.png',
-              height: 25.h,
-              width: 50.w,
             ),
           ],
         ),
