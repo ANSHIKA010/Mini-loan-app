@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mini_loan_flutter/utils/shared_pref.dart';
+import 'package:mini_loan_flutter/views/dashboard/admin_dashboard_screen.dart';
+import 'package:mini_loan_flutter/views/dashboard/user_dashboard_screen.dart';
 import 'package:sizer/sizer.dart';
 import 'package:mini_loan_flutter/views/auth/login_screen.dart';
 
@@ -16,10 +19,20 @@ class _SplashScreenState extends State<SplashScreen> {
     // TODO: implement initState
     super.initState();
     //we use future to go from one screen to other via duration time
-    Future.delayed(Duration(seconds: 5), (){
+    Future.delayed(Duration(seconds: 5), () async {
       //no return when user is on login screen and press back, it will not return the
       //user to the splash screen
-      Navigator.pushNamedAndRemoveUntil(context, LoginScreen.routeName, (route) => false);
+      Map<String, dynamic>?  userData = await SharedPref.getUserData();
+      if(userData != null && userData["token"] != null){
+        if(userData["user"]["isAdmin"]){
+          Navigator.pushNamedAndRemoveUntil(context, AdminDashboardScreen.routeName, (route) => false);
+        }else{
+          Navigator.pushNamedAndRemoveUntil(context, UserDashboardScreen.routeName, (route) => false);
+        }
+      }else{
+        Navigator.pushNamedAndRemoveUntil(context, LoginScreen.routeName, (route) => false);
+      }
+
     });
   }
   @override

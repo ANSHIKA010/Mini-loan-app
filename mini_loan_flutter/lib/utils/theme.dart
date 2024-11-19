@@ -12,7 +12,7 @@ class CustomTheme {
       toolbarHeight: Device.screenType == ScreenType.tablet ? 9.h : 7.h,
       backgroundColor: kPrimaryColor,
       titleTextStyle: google_fonts.GoogleFonts.poppins(
-        fontSize: Device.screenType == ScreenType.tablet ? 12.sp : 13.sp,
+        fontSize: Device.screenType == ScreenType.tablet ? 16.sp : 18.sp,
         fontWeight: FontWeight.w500,
         letterSpacing: 2.0,
       ),
@@ -26,7 +26,7 @@ class CustomTheme {
     inputDecorationTheme: InputDecorationTheme(
       //label style for formField
       labelStyle: TextStyle(
-          fontSize: 11.sp, color: kTextLightColor, fontWeight: FontWeight.w400),
+          fontSize: 18.sp, color: kTextLightColor, fontWeight: FontWeight.w400),
       //hint style
       hintStyle: TextStyle(fontSize: 16.0, color: kTextBlackColor, height: 0.5),
       //we are using underline input border
@@ -66,6 +66,14 @@ class CustomTheme {
         //condition if device is tablet or a phone
         fontSize: Device.screenType == ScreenType.tablet ? 45.sp : 40.sp,
       ),
+      titleMedium: TextStyle(
+          color: kTextWhiteColor,
+          fontSize: Device.screenType == ScreenType.tablet ? 16.sp : 20.sp,
+          fontWeight: FontWeight.w700),
+      titleSmall: google_fonts.GoogleFonts.poppins(
+          color: kTextWhiteColor,
+          fontSize: Device.screenType == ScreenType.tablet ? 13.sp : 15.sp,
+          fontWeight: FontWeight.w200),
     ),
   );
 }
