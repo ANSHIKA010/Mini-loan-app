@@ -1,9 +1,11 @@
+import 'package:mini_loan_flutter/models/repayment_model.dart';
+
 class Loan {
   final String id;
   final double amount;
   final int term;
   final String status;
-  final List<dynamic> repayments;
+  final List<Repayment> repayments;
 
   Loan({
     required this.id,
@@ -19,7 +21,7 @@ class Loan {
       amount: (json['amount'] as num).toDouble(),
       term: json['term'],
       status: json['status'],
-      repayments: json['repayments'],
+      repayments: (json['repayments'] as List<dynamic>).map((repayment) => Repayment.fromJson(repayment as Map<String, dynamic>)).toList(),
     );
   }
 }
