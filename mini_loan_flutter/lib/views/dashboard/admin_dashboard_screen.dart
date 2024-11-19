@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mini_loan_flutter/viewModels/auth_viewmodel.dart';
 import 'package:mini_loan_flutter/views/auth/login_screen.dart';
 import 'package:mini_loan_flutter/views/loan/loan_approval_screen.dart';
-import 'package:mini_loan_flutter/views/loan/loan_list_screen.dart';
+import 'package:mini_loan_flutter/views/loan/admin_loan_list_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:mini_loan_flutter/viewModels/admin_viewmodel.dart';
 
@@ -23,7 +23,7 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
   // List of screens for navigation
   final List<Widget> _screens = [
     const LoanApprovalScreen(),
-    const LoanListScreen(),
+    const AdminLoanListScreen(),
   ];
 
   @override

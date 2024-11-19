@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:mini_loan_flutter/viewModels/auth_viewmodel.dart';
 import 'package:provider/provider.dart';
 
 import '../../viewModels/admin_viewmodel.dart';
 import '../../widgets/loan_card.dart';
 
-class LoanListScreen extends StatefulWidget {
-  const LoanListScreen({super.key});
+class AdminLoanListScreen extends StatefulWidget {
+  const AdminLoanListScreen({super.key});
 
   @override
-  State<LoanListScreen> createState() => _LoanListScreenState();
+  State<AdminLoanListScreen> createState() => _AdminLoanListScreenState();
 }
 
-class _LoanListScreenState extends State<LoanListScreen> {
+class _AdminLoanListScreenState extends State<AdminLoanListScreen> {
   @override
   Widget build(BuildContext context) {
     final adminViewModel = Provider.of<AdminViewModel>(context);
