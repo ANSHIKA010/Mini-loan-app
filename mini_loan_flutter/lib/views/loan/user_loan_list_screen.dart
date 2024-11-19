@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../viewModels/user_viewmodel.dart';
+import '../../widgets/detailed_loan_card.dart';
 import '../../widgets/loan_card.dart';
 
 class UserLoanListScreen extends StatefulWidget {
@@ -26,7 +27,7 @@ class _UserLoanListScreenState extends State<UserLoanListScreen> {
               : ListView.builder(
                   itemCount: pendingLoans.length,
                   itemBuilder: (context, index) {
-                    return LoanCard(loan: pendingLoans[index]);
+                    return DetailedLoanCard(loan: pendingLoans[index]);
                   },
                 ),
     );

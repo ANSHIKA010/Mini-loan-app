@@ -32,4 +32,20 @@ class AdminViewModel extends ChangeNotifier {
     }
   }
 
+  Future<void> approveLoan(String loanId) async {
+    _isLoading = true;
+    notifyListeners();
+    try {
+      final userData = await SharedPref.getUserData();
+      final token = userData?['token'];
+      if (token != null) {
+        await _loanService.approveLoan(token, loanId);
+        await fetchAllLoans();
+      }
+    } finally {
+      _isLoading = false;
+      notifyListeners();
+    }
+  }
+
 }

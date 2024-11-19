@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mini_loan_flutter/utils/constants.dart';
 import 'package:mini_loan_flutter/widgets/repayment_card.dart';
 import 'package:provider/provider.dart';
 
@@ -20,7 +21,7 @@ class _LoanRepaymentScreenState extends State<LoanRepaymentScreen> {
 
     return Scaffold(
       body: userViewModel.isLoading
-          ? const Center(child: CircularProgressIndicator())
+          ? const Center(child: CircularProgressIndicator(color: kTextWhiteColor,))
           : pendingLoans.isEmpty
               ? const Center(child: Text('No Pending Repayments.'))
               : ListView.builder(

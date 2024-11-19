@@ -19,8 +19,8 @@ class DefaultButton extends StatelessWidget {
       onTap: onPress,
       child: Container(
         padding: EdgeInsets.only(right: kDefaultPadding),
-        width: 100.w,
-        height: Device.screenType == ScreenType.tablet ? 9.h : 7.h,
+        width: 50.w,
+        height: Device.screenType == ScreenType.tablet ? 7.h : 5.h,
         decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [kSecondaryColor, kPrimaryColor],
@@ -38,7 +38,7 @@ class DefaultButton extends StatelessWidget {
             Spacer(),
             Icon(
               iconData,
-              size: 26.sp,
+              size: 18.sp,
               color: kOtherColor,
             )
           ],

@@ -18,6 +18,20 @@ class LoanService {
     }
   }
 
+  Future<void> approveLoan(String token, String loanId) async {
+    final response = await http.put(
+      Uri.parse('$baseUrlLoans/$loanId/approve'),
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer $token',
+      },
+    );
+    if (response.statusCode != 200) {
+      throw Exception('Failed to make approval');
+    }
+
+  }
+
   Future<List<dynamic>> fetchUserLoans(String token) async {
     final response = await http.get(
       Uri.parse('$baseUrlLoans/get'),
