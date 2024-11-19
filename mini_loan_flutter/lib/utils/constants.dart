@@ -3,7 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 //API urls
-const String baseUrl = "https://mini-loan-app-cjl5.onrender.com/api";
+// const String baseUrlAuth = "https://172.22.63.213:8000/api/users";
+// const String baseUrlLoans = 'https://172.22.63.213:8000/api/loans';
+const String baseUrlAuth = "https://mini-loan-app-cjl5.onrender.com/api/users";
+const String baseUrlLoans = 'https://mini-loan-app-cjl5.onrender.com/api/loans';
 
 //colors
 const Color kPrimaryColor = Color(0xFF345FB4);

@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:flutter/foundation.dart';
 import 'package:mini_loan_flutter/services/api/auth_service.dart';
