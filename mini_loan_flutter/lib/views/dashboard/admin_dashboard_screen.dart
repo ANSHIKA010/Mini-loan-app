@@ -21,8 +21,8 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
 
   // List of screens for navigation
   final List<Widget> _screens = [
-    const LoanListScreen(),
     const LoanApprovalScreen(),
+    const LoanListScreen(),
   ];
 
   @override
@@ -35,10 +35,7 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
 
   @override
   Widget build(BuildContext context) {
-
-    final adminViewModel = Provider.of<AdminViewModel>(context);
     final authViewModel = Provider.of<AuthViewModel>(context);
-
 
     return Scaffold(
       appBar: AppBar(
@@ -58,17 +55,8 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
           ),
         ],
       ),
-      // body: _screens[_currentIndex],
-      body: adminViewModel.isLoading
-          ? const Center(child: CircularProgressIndicator())
-          : adminViewModel.loans.isEmpty
-          ? const Center(child: Text('No loans available.'))
-          : ListView.builder(
-        itemCount: adminViewModel.loans.length,
-        itemBuilder: (context, index) {
-          return LoanCard(loan: adminViewModel.loans[index]);
-        },
-      ),
+      body: _screens[_currentIndex],
+
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: (index) {
@@ -78,12 +66,12 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
         },
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.list_alt),
-            label: 'All Loans',
-          ),
-          BottomNavigationBarItem(
             icon: Icon(Icons.approval),
             label: 'Pending Approval',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.list_alt),
+            label: 'All Loans',
           ),
         ],
       ),
