@@ -57,9 +57,11 @@ https://github.com/user-attachments/assets/7b3f7f13-2f7e-48fd-b447-60c8aabc5408
 - The Web app url is https://mini-loan-app-1-ot8n.onrender.com/
 
 Note: 
+![image](https://github.com/user-attachments/assets/c1ac2483-c8f6-479c-b01b-7cf51b87cb6d)
 1. I didn't added loaders due to time constraint so please be patient as i hosted this web app using render.com's free service.
 2. Please wait few seconds once it log in or any change happen on the screen.
 3. Use the below mentioned Admin user credential as UI doesn't have option to create admin credential.
+
 
 ### Test Credentials
 
