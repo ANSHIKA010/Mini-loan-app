@@ -36,7 +36,7 @@ Note: Do consider the notes at the end of the Readme before using and also check
 <table>
   <tr>
     <td>
-      <a href="https://raw.githubusercontent.com/ANSHIKA010/Mini-loan-app/main/assets/demo_video.mp4">
+      <a href="https://youtu.be/KYQ8zeNJB1o">
         <img src="https://raw.githubusercontent.com/ANSHIKA010/Mini-loan-app/main/assets/thumbnail.jpg" alt="Watch the video" style="width:100%; max-width:350px;">
       </a>
     </td>
