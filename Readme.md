@@ -31,6 +31,35 @@ This is a full-stack mini-loan application built with the MERN stack. The backen
 Note: Do consider the notes at the end of the Readme before using and also check additonal notes in each section.
 
 ---
+## Mobile App Working Demo
+
+<table>
+  <tr>
+    <td>
+      <a href="https://raw.githubusercontent.com/ANSHIKA010/Mini-loan-app/main/assets/demo_video.mp4">
+        <img src="https://raw.githubusercontent.com/ANSHIKA010/Mini-loan-app/main/assets/thumbnail.jpg" alt="Watch the video" style="width:100%; max-width:350px;">
+      </a>
+    </td>
+    <td>
+      <p>
+        <strong>Description</strong><br>
+        - First I moved to register screen and registered with email <code>anshika@gmail.com</code> and password as <code>123456</code>.<br>
+        - Then I login with the same credentials and get to the user dashboard, where data is not present.<br>
+        - I created a loan request with amount 3000 for 3 weeks, which is displayed in all loans sections as it is not approved yet so can't be repaid.<br>
+        - Then I login with admin credentials <code>sanshikas010@gmail.com</code> and <code>123456</code> and approved the pending request just created from admin dashboard.<br>
+        - Now moving back to the User dashboard where I can now see repayment options.<br>
+        - I first paid an amount of 1500 to check for recalculations which can be clearly seen as the remaining repayment amounts are changed accordingly.<br>
+        - All the paid repayments are green and pending ones are red.<br>
+        - Similarly, I did 2 more repayments with amount of 750 to clear off the loan.<br>
+        - All the paid and pending loans and their details are displayed in all loans sections.<br>
+        - Finally, I logout from the App.
+      </p>
+    </td>
+  </tr>
+</table>
+
+
+---
 ## Deployment
 
 #### The server is hosted using [render](https://render.com/)
@@ -67,6 +96,58 @@ Does not include all the files, just for the overview to get an idea about the p
 ```plaintext
 root/
 │
+|
+├── mini_loan_flutter
+|   ├── main.dart                    # The entry point of the application 
+|   |
+|   ├── models
+|   |   ├── loan_model.dart          # Data model of loan
+|   |   ├── repayment_model.dart     # Data model of repayment
+|   |   └── user_model.dart          # Data model of User
+|   |
+|   ├── services
+|   |   └── api
+|   |       ├── auth_service.dart    # Contains the https requests logic to handle authentication
+|   |       └── loan_service.dart    # The api call logic to perform actions on loans data
+|   |
+|   ├── utils
+|   |   ├── constants.dart           # Contants used throughout the app (colors, urls, texts, sizes etc)
+|   |   ├── routes.dart              # Contants all the routes of the app
+|   |   ├── shared_pref.dart         # Shared pref logic to store token and user data in local storage
+|   |   └── theme.dart               # Defining the theme of the app Material
+|   |
+|   ├── viewModels                   # All the view model files associated with auth admin and user logic
+|   |   ├── admin_viewmodel.dart
+|   |   ├── auth_viewmodel.dart
+|   |   └── user_viewmodel.dart
+|   |
+|   ├── views                        # The UI screens
+|   |   ├── splash_screen.dart
+|   |   |
+|   |   ├── auth
+|   |   |   ├── login_screen.dart
+|   |   |   └── register_screen.dart
+|   |   |
+|   |   ├── dashboard
+|   |   |   ├── admin_dashboard_screen.dart
+|   |   |   └── user_dashboard_screen.dart
+|   |   |
+|   |   └── loan
+|   |       ├── admin_loan_list_screen.dart
+|   |       ├── loan_approval_screen.dart
+|   |       ├── loan_repayment_screen.dart
+|   |       └── user_loan_list_screen.dart
+|   |
+|   └── widgets                      # The helper widgets which are reused throught the views
+|       ├── default_button.dart
+|       ├── detailed_loan_card.dart
+|       ├── loan_card.dart
+|       ├── password_input_field.dart
+|       ├── repayment_card.dart
+|       ├── request_card.dart
+|       └── text_input_field.dart
+|
+|
 ├── server                   # Backend API (Node.js + Express)
 │   ├── config               # MongoDB connection setup
 │   ├── controllers          # Controllers for handling request logic
@@ -169,6 +250,25 @@ cd mini-loan-app
 
 Note: yarn.lock is also present if you want to use yarn for build and deploy.
 
+#### 4. Mobile App (Flutter) Setup
+1. Open a new terminal and navigate to the `mini_loan_flutter` directory:
+    ```bash
+    cd ../mini_loan_flutter
+    ```
+2. Flutter and dart installed correctly, check using doctor command:
+    ```bash
+    flutter doctor
+    ```
+3. Connect emulator or physical device to build the app.
+4. Get dependencies from pub:
+    ```bash
+    flutter pub get
+    ```
+5. Run flutter app
+    ```bash
+    flutter run
+    ```
+
 ---
 
 ## Testing
@@ -199,6 +299,7 @@ The below is the link of Postman API documentation: https://api.postman.com/coll
 ### Accessing the App
 - **Frontend**: `http://localhost:3000`
 - **Backend API**: `http://localhost:8000/api`
+The app is using the backend already hosted on render.com
 
 ### Default User Roles
 - Users can register directly from the frontend.
@@ -214,6 +315,7 @@ For test purposes api have a param to set admin as true but it is not exposed.
 - **MongoDB**: For flexible data storage.
 - **Mongoose**: For schema-based modeling with MongoDB.
 - **Nodejs**: For API designing and server side programming.
+- **Flutter**: For Mobile App development.
 
 ---
 
