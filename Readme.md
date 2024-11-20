@@ -33,30 +33,20 @@ Note: Do consider the notes at the end of the Readme before using and also check
 ---
 ## Mobile App Working Demo
 
-<table>
-  <tr>
-    <td>
-      <a href="https://youtu.be/KYQ8zeNJB1o">
-        <img src="https://raw.githubusercontent.com/ANSHIKA010/Mini-loan-app/main/assets/thumbnail.jpg" alt="Watch the video" style="width:100%; max-width:350px;">
-      </a>
-    </td>
-    <td>
-      <p>
-        <strong>Description</strong><br>
-        - First I moved to register screen and registered with email <code>anshika@gmail.com</code> and password as <code>123456</code>.<br>
-        - Then I login with the same credentials and get to the user dashboard, where data is not present.<br>
-        - I created a loan request with amount 3000 for 3 weeks, which is displayed in all loans sections as it is not approved yet so can't be repaid.<br>
-        - Then I login with admin credentials <code>sanshikas010@gmail.com</code> and <code>123456</code> and approved the pending request just created from admin dashboard.<br>
-        - Now moving back to the User dashboard where I can now see repayment options.<br>
-        - I first paid an amount of 1500 to check for recalculations which can be clearly seen as the remaining repayment amounts are changed accordingly.<br>
-        - All the paid repayments are green and pending ones are red.<br>
-        - Similarly, I did 2 more repayments with amount of 750 to clear off the loan.<br>
-        - All the paid and pending loans and their details are displayed in all loans sections.<br>
-        - Finally, I logout from the App.
-      </p>
-    </td>
-  </tr>
-</table>
+https://github.com/user-attachments/assets/7b3f7f13-2f7e-48fd-b447-60c8aabc5408
+
+### Description
+
+- First I moved to register screen and registered with email anshika@gmail.com and password as 123456.
+- Then I login with the same credentials and get to the user dashboard, where data is not present.
+- I created a loan request with amount 3000 for 3 weeks, which is displayed in all loans sections as it is not approved yet so can't be repaid.
+- Then I login with admin credentials sanshikas010@gmail.com and 123456 and approved the pending request just created from admin dashboard.
+- Now moving back to the User dashboard where I can now see repayment options.
+- I first paid an amount of 1500 to check for recalculations which can be clearly seen as the remaining repayment amounts are changed accordingly.
+- All the paid repayments are green and pending ones are red.
+- Similarly, I did 2 more repayments with amount of 750 to clear off the loan.
+- All the paid and pending loans and their details are displayed in all loans sections.
+- Finally, I logout from the App.
 
 
 ---
