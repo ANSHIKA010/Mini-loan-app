@@ -1,6 +1,6 @@
 # Mini Loan Application
 
-This is a full-stack mini-loan application built with the MERN stack. The backend is powered by Node.js, Express, and MongoDB, while the frontend is developed with React. This application allows users to request loans, make repayments, and view loan details. Admin users can manage and approve loans.
+This is a full-stack mini-loan application built with the MERN stack and flutter. The backend is powered by Node.js, Express, and MongoDB, while the frontend is developed with React. This application allows users to request loans, make repayments, and view loan details. Admin users can manage and approve loans.
 
 ## Table of Contents
 - [Features](#features)
