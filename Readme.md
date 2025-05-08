@@ -75,7 +75,7 @@ Note:
 #### Non-Admin User
 
   ```
-  username: sanshikas@gmail.com
+  username: anshika@gmail.com
   password: 123456
   ```
 
